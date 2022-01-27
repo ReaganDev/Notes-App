@@ -2,9 +2,16 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
-import { makeStyles } from '@material-ui/core'
+import {
+	FormControl,
+	FormControlLabel,
+	FormLabel,
+	makeStyles,
+} from '@material-ui/core'
 import TextField from '@material-ui/core/TextField'
 import { useRef, useState } from 'react'
+import Radio from '@material-ui/core/Radio'
+import RadioGroup from '@material-ui/core/RadioGroup'
 
 const useStyles = makeStyles({
 	field: {
@@ -19,6 +26,7 @@ const Create = () => {
 	const detailsRef = useRef()
 	const classes = useStyles()
 	const [detailsError, setDetailsError] = useState(false)
+	const [category, setCategory] = useState('Reminder')
 	const [titleError, setTitleError] = useState(false)
 	function handleSubmit(e) {
 		e.preventDefault()
@@ -30,7 +38,7 @@ const Create = () => {
 		if (detailsRef.current.value === '') {
 			setDetailsError(true)
 		} else if (titleRef.current.value && detailsRef.current.value) {
-			console.log(titleRef.current.value, detailsRef.current.value)
+			console.log(titleRef.current.value, detailsRef.current.value, category)
 		}
 	}
 	return (
@@ -67,8 +75,26 @@ const Create = () => {
 					inputRef={detailsRef}
 					required
 				/>
+
+				<FormControl className={classes.field}>
+					<FormLabel>Note Category</FormLabel>
+					<RadioGroup
+						value={category}
+						onChange={(e) => setCategory(e.target.value)}
+					>
+						<FormControlLabel value='Money' control={<Radio />} label='Money' />
+						<FormControlLabel value='Todos' control={<Radio />} label='Todos' />
+						<FormControlLabel
+							value='Reminder'
+							control={<Radio />}
+							label='Reminder'
+						/>
+						<FormControlLabel value='Work' control={<Radio />} label='Work' />
+					</RadioGroup>
+				</FormControl>
+
 				<Button
-					color='primary'
+					color='secondary'
 					variant='contained'
 					type='submit'
 					endIcon={<KeyboardArrowRightIcon />}
