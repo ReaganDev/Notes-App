@@ -1,0 +1,28 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "title": "Reagan's birthday bash",
+      "category": "Reminders",
+      "details": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Omnis laboriosam provident, adipisci tempore officiis voluptatum cumque, enim autem, maxime magnam quod sapiente neque aliquid dolor?"
+    },
+    {
+      "id": 2,
+      "title": "Complete my ninja training",
+      "category": "Work",
+      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt necessitatibus voluptatum similique quibusdam deserunt? Quidem, blanditiis dicta saepe odit rerum porro harum placeat excepturi consequuntur!"
+    },
+    {
+      "id": 3,
+      "title": "Order a pizza",
+      "category": "Todos",
+      "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quas et rerum veniam iure nobis alias eaque perspiciatis laboriosam sequi."
+    },
+    {
+      "title": "My birthday",
+      "details": "Birthday bash",
+      "category": "Money",
+      "id": 4
+    }
+  ]
+}

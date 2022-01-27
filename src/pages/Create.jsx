@@ -12,6 +12,7 @@ import TextField from '@material-ui/core/TextField'
 import { useRef, useState } from 'react'
 import Radio from '@material-ui/core/Radio'
 import RadioGroup from '@material-ui/core/RadioGroup'
+import { useNavigate } from 'react-router-dom'
 
 const useStyles = makeStyles({
 	field: {
@@ -23,6 +24,7 @@ const useStyles = makeStyles({
 
 const Create = () => {
 	const titleRef = useRef()
+	const navigate = useNavigate()
 	const detailsRef = useRef()
 	const classes = useStyles()
 	const [detailsError, setDetailsError] = useState(false)
@@ -38,7 +40,17 @@ const Create = () => {
 		if (detailsRef.current.value === '') {
 			setDetailsError(true)
 		} else if (titleRef.current.value && detailsRef.current.value) {
-			console.log(titleRef.current.value, detailsRef.current.value, category)
+			const newTitle = titleRef.current.value
+			const newDetails = detailsRef.current.value
+			fetch('http://localhost:8000/notes', {
+				method: 'POST',
+				headers: { 'Content-type': 'application/json' },
+				body: JSON.stringify({
+					title: newTitle,
+					details: newDetails,
+					category,
+				}),
+			}).then(() => navigate('/'))
 		}
 	}
 	return (
