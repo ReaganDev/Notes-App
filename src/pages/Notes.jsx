@@ -1,7 +1,7 @@
 import { Container } from '@material-ui/core'
-import Grid from '@material-ui/core/Grid'
 import React, { useEffect, useState } from 'react'
 import NotesCard from '../components/NotesCard'
+import Masonry from 'react-masonry-css'
 
 const Notes = () => {
 	const [notes, setNotes] = useState([])
@@ -17,15 +17,25 @@ const Notes = () => {
 		})
 		setNotes(notes.filter((note) => note.id !== id))
 	}
+
+	const breakpointColumnsObj = {
+		default: 3,
+		1100: 2,
+		700: 1,
+	}
 	return (
 		<Container>
-			<Grid container spacing={3}>
+			<Masonry
+				breakpointCols={breakpointColumnsObj}
+				className='my-masonry-grid'
+				columnClassName='my-masonry-grid_column'
+			>
 				{notes.map((note) => (
-					<Grid item xs={12} sm={12} md={4} lg={3} key={note.id}>
+					<div key={note.id}>
 						<NotesCard note={note} deleteNote={deleteNote} />
-					</Grid>
+					</div>
 				))}
-			</Grid>
+			</Masonry>
 		</Container>
 	)
 }
