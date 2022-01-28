@@ -17,6 +17,12 @@
       "details": "This is a new reminder to do something very important",
       "category": "Reminder",
       "id": 5
+    },
+    {
+      "title": "Pay The milkman",
+      "details": "Pay the milkman",
+      "category": "Money",
+      "id": 6
     }
   ]
 }
