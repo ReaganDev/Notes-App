@@ -21,7 +21,7 @@ const Notes = () => {
 		<Container>
 			<Grid container spacing={3}>
 				{notes.map((note) => (
-					<Grid item xs={12} sm={6} md={4} lg={3} key={note.id}>
+					<Grid item xs={12} sm={12} md={4} lg={3} key={note.id}>
 						<NotesCard note={note} deleteNote={deleteNote} />
 					</Grid>
 				))}
