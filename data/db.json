@@ -13,10 +13,10 @@
       "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam quas et rerum veniam iure nobis alias eaque perspiciatis laboriosam sequi."
     },
     {
-      "title": "My birthday",
-      "details": "Birthday bash",
-      "category": "Money",
-      "id": 4
+      "title": "New Reminder",
+      "details": "This is a new reminder to do something very important",
+      "category": "Reminder",
+      "id": 5
     }
   ]
 }
